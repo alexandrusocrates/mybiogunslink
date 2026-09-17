@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #050505;
+      color: #ffffff;
+      font-family: 'Onest', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #111;
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid #333;
+      text-align: center;
+      width: 300px;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 20px 0;
+      border-radius: 8px;
+      border: 1px solid #555;
+      background: #222;
+      color: white;
+      outline: none;
+    }
+    button {
+      background: #d800a6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+    }
+    button:hover { background: #ff77e9; }
+    
+    #dashboard { display: none; }
+    #login-screen { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- ECRANUL DE LOGIN -->
+  <div class="container" id="login-screen">
+    <h2>Dashboard Login</h2>
+    <input type="password" id="passInput" placeholder="Introdu parola...">
+    <button onclick="verificaParola()">Intră</button>
+    <p id="eroare" style="color: red; display: none; font-size: 13px;">Parolă incorectă!</p>
+  </div>
+
+  <!-- ECRANUL CARE APARE DUPĂ CE BAGI PAROLA CORECTĂ -->
+  <div class="container" id="dashboard" style="width: 80vw; max-width: 800px;">
+    <h2>Statistici Site</h2>
+    <p>Apasă pe butonul de mai jos pentru a deschide panoul tău complet cu vizualizările (1/7/14/30 zile).</p>
+    
+    <!-- SCHIMBĂ LINK-UL DE MAI JOS CU LINK-UL TĂU DE LA GOATCOUNTER -->
+    <a href="https://alexandru-kotf.goatcounter.com" target="_blank">
+      <button style="margin-top: 20px;">Deschide Panoul de Statistici</button>
+    </a>
+  </div>
+
+  <script>
+    function verificaParola() {
+      const parola = document.getElementById('passInput').value;
+      
+      // Parola actuală este xo2026 (o poți schimba de aici când vrei)
+      if (parola === 'xo2026') {
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+      } else {
+        document.getElementById('eroare').style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
